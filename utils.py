@@ -60,6 +60,16 @@ max_len=100):
     assert len(val_image_paths) == len(val_image_captions)
     assert len(test_image_paths) == len(test_image_captions)
 
+
+    # Perform the model training in only 100 images for traning 10 images for validation and 10 images for testing
+    train_image_paths = train_image_paths[:100]
+    train_image_captions = train_image_captions[:100]
+    val_image_paths = val_image_paths[10:20]
+    val_image_captions = val_image_captions[10:20]
+    test_image_paths = test_image_paths[:10]
+    test_image_captions = test_image_captions[:10]
+
+
     # Create word map
     words = [w for w in word_freq.keys() if word_freq[w] > min_word_freq]
     word_map = {k: v + 1 for v, k in enumerate(words)}

@@ -14,20 +14,20 @@ import nltk
 import matplotlib.pyplot as plt
 import os
 # Data parameters
-data_folder = 'D:/Image-to-Caption-Final/Flickr8k_preprocessed'  # folder with data files saved by create_input_files.py
+data_folder = 'C:/Image-to-Caption-100/Flickr8k_preprocessed'  # folder with data files saved by create_input_files.py
 data_name = 'flickr8k_5_cap_per_img_5_min_word_freq'  # base name shared by data files
-plot_dir = 'D:/Image-to-Caption-Final/plots'  # folder where plots are saved
+plot_dir = 'C:/Image-to-Caption-100/plots'  # folder where plots are saved
 # Model parameters
 emb_dim = 512  # dimension of word embeddings
 attention_dim = 256  # dimension of attention linear layers
 decoder_dim = 512  # dimension of decoder RNN
-dropout = 0.6
+dropout = 0.3
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # sets device for model and PyTorch tensors
 cudnn.benchmark = True  # set to true only if inputs to model are fixed size; otherwise lot of computational overhead
 
 # Training parameters
 start_epoch = 0
-epochs = 600  # number of epochs to train for (if early stopping is not triggered)
+epochs = 200  # number of epochs to train for (if early stopping is not triggered)
 epochs_since_improvement = 0  # keeps track of number of epochs since there's been an improvement in validation BLEU
 batch_size = 16
 workers = 1  # for data-loading; right now, only 1 works with h5py
@@ -49,7 +49,7 @@ def main():
     Training and validation.
     """
     global best_meteor, epochs_since_improvement, checkpoint, start_epoch, fine_tune_encoder, data_name, word_map, train_losses, validation_metrics
-    checkpoint = 'D:/Image-to-Caption-Final/checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar' 
+    # checkpoint = 'D:/Image-to-Caption-Final/checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar' 
     
     # Read word map
     word_map_file = os.path.join(data_folder, 'WORDMAP_' + data_name + '.json')
