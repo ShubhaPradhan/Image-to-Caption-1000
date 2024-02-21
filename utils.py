@@ -61,7 +61,7 @@ max_len=100):
     assert len(test_image_paths) == len(test_image_captions)
 
 
-    # Perform the model training in only 100 images for traning 10 images for validation and 10 images for testing
+    # Perform the model training in only 1500 images for traning 150 images for validation and 150 images for testing
     train_image_paths = train_image_paths[:1500]
     train_image_captions = train_image_captions[:1500]
     val_image_paths = val_image_paths[:150]
