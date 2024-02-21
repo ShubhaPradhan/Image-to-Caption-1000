@@ -14,9 +14,9 @@ import nltk
 import matplotlib.pyplot as plt
 import os
 # Data parameters
-data_folder = 'C:/Image-to-Caption-1000/Flickr8k_preprocessed'  # folder with data files saved by create_input_files.py
+data_folder = 'D:/Image-to-Caption-1000/Flickr8k_preprocessed'  # folder with data files saved by create_input_files.py
 data_name = 'flickr8k_5_cap_per_img_5_min_word_freq'  # base name shared by data files
-plot_dir = 'C:/Image-to-Caption-1000/plots'  # folder where plots are saved
+plot_dir = 'D:/Image-to-Caption-1000/plots'  # folder where plots are saved
 # Model parameters
 emb_dim = 512  # dimension of word embeddings
 attention_dim = 256  # dimension of attention linear layers
@@ -50,7 +50,7 @@ def main():
     Training and validation.
     """
     global best_meteor, epochs_since_improvement, checkpoint, start_epoch, fine_tune_encoder, data_name, word_map, train_losses, validation_metrics
-    checkpoint = 'C:/Image-to-Caption-1000/BEST_checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar' 
+    checkpoint = 'D:/Image-to-Caption-1000/BEST_checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar' 
     
     # Read word map
     word_map_file = os.path.join(data_folder, 'WORDMAP_' + data_name + '.json')
