@@ -9,7 +9,7 @@ import skimage.transform
 import argparse
 from PIL import Image
 import imageio
-
+# test
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # OUTPUT DIRECTORY TO STORE THE ATTENTION MECHANISM IMAGES
